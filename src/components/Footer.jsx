@@ -13,11 +13,19 @@ const Container = styled.footer`
     ),
     url(../../assets/images/bg.jpg);
   color: white;
+  @media only screen and (max-width: 900px) {
+    /* width: 100%; */
+    flex-direction: column;
+
+  }
 `;
 const Link = styled.a`
   text-decoration: none;
   color: white;
   margin: 0px 30px;
+  @media only screen and (max-width: 900px) {
+    padding:5px
+  }
 `;
 
 const Footer = () => {

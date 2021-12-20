@@ -17,6 +17,8 @@ const Main = styled.div`
   margin-bottom: 20px;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    margin-left: 10px;
+  margin-right: 10px;
   }
 `;
 const Heading = styled.h1`
@@ -30,6 +32,9 @@ const Heading = styled.h1`
 
 const Image = styled.img`
   max-width: 100%;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 const Card = styled.div`
   margin-top: 10px;

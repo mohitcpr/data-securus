@@ -30,6 +30,8 @@ const Main = styled.div`
   justify-content: space-around;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `;
 const Heading = styled.h1`
@@ -38,14 +40,25 @@ const Heading = styled.h1`
   font-size: 39px;
   margin-left: 80px;
   padding-top: 100px;
+    @media only screen and (max-width: 900px) {
+    margin:0;
+    padding-left: 20px;
+  }
 `;
 const Subheading = styled.p`
   color: ${colors.white};
   color: #c4c4c4;
   margin-left: 80px;
+    @media only screen and (max-width: 900px) {
+    margin:0;
+    padding-left: 20px;
+  }
 `;
 const Image = styled.img`
   max-width: 100%;
+  @media only screen and (max-width: 900px) {
+    max-width: 100%;
+  }
 `;
 const ImageDuo = styled.img`
   width: 510px;

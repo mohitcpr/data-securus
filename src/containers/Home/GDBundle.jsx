@@ -8,6 +8,9 @@ import { AiFillCheckCircle } from "react-icons/ai";
 const Container = styled.section`
   background-color: ${colors.primaryBg};
   padding: 40px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.primary};
@@ -24,11 +27,16 @@ const Main = styled.div`
   padding-right: 70px;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    padding-left: 20px;
+  padding-right: 20px;
   }
 `;
 const SubText = styled.p`
-  padding-left: 160px;
-  padding-right: 160px;
+  /* padding-left: 160px;
+  padding-right: 160px; */
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const SubHeading = styled.h1`
   color: ${colors.primary};
@@ -38,10 +46,18 @@ const SubHeading = styled.h1`
   padding-top: 40px;
 `;
 const Image = styled.img`
-  /* padding: 40px; */
+  /* padding: 40px;
   width: 570px;
   height: 570px;
-  max-width: 100%;
+  max-width: 100%; */
+  padding: 40px;
+  width: 600px;
+  max-width: 600px;
+  width: calc(50% - 80px);
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    padding: 40px 0;
+  }
 `;
 const CheckList = styled.p`
   color: ${colors.primary};
@@ -55,10 +71,10 @@ const ListSection = styled.div`
   align-items: center;
 `;
 const TextContent = styled.div`
-  /* width: 800px; */
+  width: 100%;
 `;
 const TextBox = styled.p`
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 `;
 const GDBundle = () => {
   return (

@@ -17,6 +17,8 @@ const Main = styled.div`
   padding-right: 140px;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    padding-left: 20px;
+  padding-right: 20px;
   }
 `;
 const Heading = styled.h1`

@@ -32,6 +32,8 @@ const Main = styled.div`
   justify-content: space-around;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `;
 const Heading = styled.h1`
@@ -40,16 +42,26 @@ const Heading = styled.h1`
   font-size: 39px;
   margin-left: 80px;
   padding-top: 100px;
+  @media only screen and (max-width: 900px) {
+    margin:0;
+    padding-left: 20px;
+  }
 `;
 const Subheading = styled.p`
   color: ${colors.white};
   color: #c4c4c4;
   margin-left: 80px;
+  @media only screen and (max-width: 900px) {
+    padding-left: 20px;
+  }
 `;
 const Image = styled.img`
   max-width: 100%;
   border-radius: 10px;
   background-color: hsla(0, 0%, 86.66666666666667%, 0.25);
+  @media only screen and (max-width: 900px) {
+    max-width: 100%;
+  }
 `;
 const Card = styled.div`
   margin-top: 10px;
