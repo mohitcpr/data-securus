@@ -9,6 +9,7 @@ import GDBundle from "./GDBundle";
 import EditableFile from "./EditableFile";
 import WhatYouGet from "./WhatYouGet";
 import MotionGraphics from "./MotionGraphics";
+import AdobCollection from "./AdobCollection";
 
 const Container = styled.div`
   margin: 0;
@@ -19,12 +20,13 @@ const Home = () => {
       <HomeMain />
       <MainProduct />
       <AllProducts />
+      <AdobCollection />
       <Pricing />
       <Offers />
       <GDBundle />
       <EditableFile />
-      <WhatYouGet/>
-      <MotionGraphics/>
+      <WhatYouGet />
+      <MotionGraphics />
     </Container>
   );
 };

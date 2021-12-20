@@ -20,7 +20,6 @@ const Container = styled.section`
 `;
 const CardHeading = styled.h1`
   color: ${colors.primary};
-  line-height: 1px;
   text-align: center;
   font-size: 3.2em;
   padding-top: 100px;
@@ -29,10 +28,23 @@ const CardHeading = styled.h1`
 const Main = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 180px;
   margin-right: 180px;
   margin-bottom: 20px;
+  @media only screen and (max-width: 1400px) {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  @media only screen and (max-width: 1000px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 `;
 const Card = styled.div`
   margin-top: 10px;
@@ -57,7 +69,6 @@ const IconBox = styled.div`
 const Heading = styled.h1`
   color: ${(props) => (props.isRecommended ? `#fff` : `#006466`)};
   /* font-family: "Merriweather Sans", Sans-serif; */
-  line-height: 1px;
   text-align: center;
   font-size: 1.2em;
   font-weight: 600;
@@ -65,16 +76,37 @@ const Heading = styled.h1`
 `;
 const Price = styled.h1`
   color: ${(props) => (props.isRecommended ? `#fff` : `#006466`)};
-  line-height: 1px;
+  margin: 5px;
   text-align: center;
   font-size: 2.2em;
-  padding-top: 20px;
+`;
+const MRP = styled.h2`
+  margin: 0;
+  color: red;
+  text-align: center;
+  text-decoration: line-through;
+`;
+const DiscountBgContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const DiscountBgImg = styled.img`
+  width: 100px;
+`;
+const DiscountTxt = styled.div`
+  position: absolute;
+  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 10px;
 `;
 const CheckList = styled.p`
   color: ${(props) => (props.isRecommended ? `#fff` : `#006466`)};
   /* justify-content: center; */
   padding-left: 10px;
-  line-height: 1px;
+  margin: 5px;
 `;
 const ListSection = styled.div`
   display: flex;
@@ -87,17 +119,25 @@ const ButtonPay = styled.button`
   background-color: ${colors.primary};
   align-items: center;
   justify-content: center;
-  padding:10px 16px;
+  padding: 10px 16px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
+  font-size: 24px;
+  box-shadow: 1px 1px 7px -2px black;
   border: none;
   margin-top: 20px;
   margin-bottom: 20px;
   color: ${colors.white};
   font-size: 20;
   text-align: center;
+  cursor: pointer;
+  width: 100%;
+  width: 100%;
+  background-color: ${(props) =>
+    props.isRecommended ? "#d2e4dd" : "colors.primary"};
+  color: ${(props) => (props.isRecommended ? "#006466" : "white")};
 `;
 // const ButtonText = styled.h3`
 //   color: ${colors.white};
@@ -134,10 +174,9 @@ const Pricing = () => {
     e.stopPropagation();
     console.log(e?.target);
     history.push("checkout/" + e?.target?.dataset?.id);
-    
   };
   return (
-    <Container>
+    <Container id="pricing">
       <CardHeading>Our Pricing</CardHeading>
       <Main>
         {product.map((item) => (
@@ -152,12 +191,21 @@ const Pricing = () => {
               <Heading isRecommended={item.is_recommended === "1"}>
                 {item.name}
               </Heading>
+              <MRP>₹ {item.mrp}</MRP>
+              <DiscountBgContainer>
+                <DiscountBgImg src="/images/discount-bg.png" />
+                <DiscountTxt>
+                  {parseInt(100 - (item.selling_price * 100) / item.mrp)} %
+                </DiscountTxt>
+              </DiscountBgContainer>
               <Price isRecommended={item.is_recommended === "1"}>
-                {item.selling_price}
+                ₹ {item.selling_price}
               </Price>
               <IconContext.Provider
                 isRecommended={item.is_recommended === "1"}
-                value={{ color: "#cfcfcf" }}
+                value={{
+                  color: item.is_recommended === "1" ? "#ffffff" : "#31576a",
+                }}
               >
                 {item?.desc?.map((descitem) => (
                   <ListSection>
@@ -169,8 +217,12 @@ const Pricing = () => {
                 ))}
               </IconContext.Provider>
             </PricingCard>
-            <ButtonPay data-id={item.id} onClick={clickOnLink}>
-              place your order
+            <ButtonPay
+              data-id={item.id}
+              onClick={clickOnLink}
+              isRecommended={item.is_recommended === "1"}
+            >
+              Buy now
             </ButtonPay>
           </Card>
         ))}

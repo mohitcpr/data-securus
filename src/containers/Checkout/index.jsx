@@ -1,10 +1,10 @@
 import React from "react";
 import CheckoutMain from "./CheckoutMain";
 
-const Checkout = () => {
+const Checkout = (props) => {
   return (
     <>
-      <CheckoutMain />
+      <CheckoutMain {...props} />
     </>
   );
 };

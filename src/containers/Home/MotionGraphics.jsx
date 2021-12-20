@@ -12,7 +12,12 @@ const Main = styled.div`
   justify-content: space-between;
   margin-left: 140px;
   margin-right: 140px;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin-bottom: 20px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.primary};
@@ -21,10 +26,11 @@ const Heading = styled.h1`
   text-align: center;
   padding-top: 100px;
   padding-bottom: 20px;
-  line-height: 1px;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  max-width: 100%;
+`;
 const Card = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;

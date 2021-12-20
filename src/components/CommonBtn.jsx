@@ -10,10 +10,12 @@ const Buttons = styled.button`
   padding-left: 16px;
   padding-right: 16px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 5px;
   border: none;
+  @media only screen and (max-width: 900px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 const BtnText = styled.h3`
   color: ${colors.white};

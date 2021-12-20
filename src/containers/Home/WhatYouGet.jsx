@@ -23,6 +23,9 @@ const Main = styled.div`
   justify-content: space-between;
   padding-left: 180px;
   padding-right: 180px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.white};
@@ -35,7 +38,6 @@ const CheckList = styled.p`
   color: ${colors.white};
   /* justify-content: center; */
   padding-left: 10px;
-  line-height: 1px;
 `;
 const ListSection = styled.div`
   display: flex;

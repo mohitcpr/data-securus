@@ -28,6 +28,11 @@ const Main = styled.div`
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.white};
@@ -35,20 +40,24 @@ const Heading = styled.h1`
   font-size: 39px;
   margin-left: 80px;
   padding-top: 100px;
-  line-height: 1px;
 `;
 const Subheading = styled.p`
   color: ${colors.white};
   color: #c4c4c4;
   margin-left: 80px;
 `;
-const Image = styled.img``;
+const Image = styled.img`
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 86.66666666666667%, 0.25);
+`;
 const Card = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 20px;
   border-radius: 10px;
   background-color: hsla(0, 0%, 86.66666666666667%, 0.25);
+  text-align: center;
 `;
 const CardMain = styled.div`
   margin: 10px;
@@ -74,8 +83,6 @@ const AllProducts = () => {
         <Card>
           <Image src={ProductImage3} alt="banner" />
         </Card>
-      </Main>
-      <Main>
         <Card>
           <Image src={ProductImage4} alt="banner" />
         </Card>
@@ -85,8 +92,6 @@ const AllProducts = () => {
         <Card>
           <Image src={ProductImage6} alt="banner" />
         </Card>
-      </Main>
-      <Main>
         <Card>
           <Image src={ProductImage7} alt="banner" />
         </Card>

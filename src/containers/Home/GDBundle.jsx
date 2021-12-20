@@ -22,6 +22,9 @@ const Main = styled.div`
   justify-content: space-between;
   padding-left: 70px;
   padding-right: 70px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const SubText = styled.p`
   padding-left: 160px;
@@ -38,12 +41,12 @@ const Image = styled.img`
   /* padding: 40px; */
   width: 570px;
   height: 570px;
+  max-width: 100%;
 `;
 const CheckList = styled.p`
   color: ${colors.primary};
   /* justify-content: center; */
   padding-left: 10px;
-  line-height: 1px;
 `;
 const ListSection = styled.div`
   display: flex;

@@ -1,29 +1,29 @@
-import axios from 'axios';
+import axios from "axios";
 // import {getMeta} from '../common/utils';
 // const BASE_URL = "https://api.swifsys.com/pub(lic";
-const BASE_URL = 'http://api.datasecurus.com/v1';
-const toUrlEncoded = obj =>
+const BASE_URL = "https://www.datasecurus.com/api/v1";
+const toUrlEncoded = (obj) =>
   Object.keys(obj)
-    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]))
-    .join('&');
+    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(obj[k]))
+    .join("&");
 
-const jsonToUrlEncoded = json => {
+const jsonToUrlEncoded = (json) => {
   const formBody = [];
   for (var property in json) {
     var encodedKey = encodeURIComponent(property);
     var encodedValue = encodeURIComponent(json[property]);
-    formBody.push(encodedKey + '=' + encodedValue);
+    formBody.push(encodedKey + "=" + encodedValue);
   }
-  return formBody.join('&');
+  return formBody.join("&");
 };
 export const fetchRequest = (uri, method, body, token, header = {}) => {
   // console.log(body);
 
-  const reqBody = body ? toUrlEncoded(body) : '';
+  const reqBody = body ? toUrlEncoded(body) : "";
   return new Promise((resolve, reject) => {
     const config = {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
       },
     };
     const requestBody = {
@@ -33,17 +33,17 @@ export const fetchRequest = (uri, method, body, token, header = {}) => {
     };
     // alert(JSON.stringify(config));
     const ax =
-      method.toUpperCase() === 'GET'
+      method.toUpperCase() === "GET"
         ? axios.get(`${BASE_URL}/${uri}`, config)
         : axios[method](`${BASE_URL}/${uri}`, jsonToUrlEncoded(body), config);
-    ax.then(res => {
+    ax.then((res) => {
       // alert(JSON.stringify(res));
       if (res.status >= 200 || res.status < 300) {
         return resolve(res.data);
       } else {
         return reject(res.data);
       }
-    }).catch(err => {
+    }).catch((err) => {
       // alert(JSON.stringify(err));
       return reject(err);
     });

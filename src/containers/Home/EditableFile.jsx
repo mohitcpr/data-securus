@@ -15,6 +15,9 @@ const Main = styled.div`
   justify-content: space-between;
   padding-left: 140px;
   padding-right: 140px;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.primary};
@@ -34,12 +37,13 @@ const SubHeading = styled.h1`
   font-weight: 600;
 `;
 const Text = styled.p``;
-const Image = styled.img``;
+const Image = styled.img`
+  max-width: 100%;
+`;
 const CheckList = styled.p`
   color: ${colors.black};
   /* justify-content: center; */
   padding-left: 10px;
-  line-height: 1px;
 `;
 const ListSection = styled.div`
   display: flex;
@@ -95,10 +99,12 @@ const EditableFile = () => {
       </Main>
       <Main>
         <TextContainer>
-          <SubHeading>Grow Your Income With This Awesome Social Media Bundle
-</SubHeading>
+          <SubHeading>
+            Grow Your Income With This Awesome Social Media Bundle
+          </SubHeading>
           <Text>
-          You Can Save A Lot Of Time & Multiply Your Income By Selling Banner Design Service To Your Clients
+            You Can Save A Lot Of Time & Multiply Your Income By Selling Banner
+            Design Service To Your Clients
           </Text>
           <IconContext.Provider value={{ color: "#006466" }}>
             <ListSection>
@@ -128,7 +134,6 @@ const EditableFile = () => {
           </IconContext.Provider>
         </TextContainer>
         <Image src={Img2} alt="banner" />
-
       </Main>
     </Container>
   );

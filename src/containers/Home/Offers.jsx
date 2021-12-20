@@ -26,6 +26,11 @@ const Main = styled.div`
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.white};
@@ -33,17 +38,19 @@ const Heading = styled.h1`
   font-size: 39px;
   margin-left: 80px;
   padding-top: 100px;
-  line-height: 1px;
 `;
 const Subheading = styled.p`
   color: ${colors.white};
   color: #c4c4c4;
   margin-left: 80px;
 `;
-const Image = styled.img``;
+const Image = styled.img`
+  max-width: 100%;
+`;
 const ImageDuo = styled.img`
   width: 510px;
   height: 287px;
+  max-width: 100%;
 `;
 
 const Card = styled.div`
@@ -87,8 +94,6 @@ const Offers = () => {
           <CardHeading>1500+ Wedding Invitations</CardHeading>
           <Image src={ProductImage3} alt="banner" />
         </Card>
-      </Main>
-      <Main>
         <Card>
           <CardHeading>200+ Typography Compositions</CardHeading>
           <ImageDuo src={ProductImage4} alt="banner" />
@@ -98,8 +103,6 @@ const Offers = () => {
           <CardHeading>7000+ HD Graphic</CardHeading>
           <ImageDuo src={ProductImage5} alt="banner" />
         </Card>
-      </Main>
-      <Main>
         <Card>
           <CardHeading>
             10k+ HD Graphics, Logo, Business Letterhead (PSD)
@@ -114,8 +117,6 @@ const Offers = () => {
           <CardHeading>160+ Infographic</CardHeading>
           <Image src={ProductImage9} alt="banner" />
         </Card>
-      </Main>
-      <Main>
         <Card>
           <CardHeading>90+ Motion Gradients</CardHeading>
           <ImageDuo src={ProductImage4} alt="banner" />
@@ -125,8 +126,6 @@ const Offers = () => {
           <CardHeading>140+ Human Characters</CardHeading>
           <ImageDuo src={ProductImage6} alt="banner" />
         </Card>
-      </Main>
-      <Main>
         <Card>
           <CardHeading> 82+ Text Effects (PSD)</CardHeading>
           <Image src={ProductImage7} alt="banner" />

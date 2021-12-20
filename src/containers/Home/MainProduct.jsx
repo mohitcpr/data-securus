@@ -10,24 +10,37 @@ import { IconContext } from "react-icons";
 import { AiFillStar, AiFillEye, AiOutlineCheck } from "react-icons/ai";
 const Container = styled.section`
   background-color: ${colors.white};
-  
 `;
 const Main = styled.div`
   opacity: 0.92;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: center;
+    text-align: center;
+  }
 `;
 const TextContent = styled.div`
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 120px;
+  max-width: 600px;
+  width: calc(50% - 80px);
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 const Image = styled.img`
   padding: 40px;
   width: 600px;
-  height: 600px;
-  padding-left: 80px;
+  max-width: 600px;
+  width: calc(50% - 80px);
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    padding: 40px 0;
+  }
 `;
 const Heading = styled.h1`
   color: ${colors.primary};
@@ -39,24 +52,20 @@ const ReviewText = styled.p`
   color: ${colors.gray};
   font-family: "Merriweather Sans", Sans-serif;
   font-size: 19px;
-  text-align: center;
 `;
 const Subheading = styled.p`
   color: ${colors.red};
-  text-align: center;
   font-weight: 600;
 `;
 const List = styled.p`
   color: ${colors.lightGray};
   /* justify-content: center; */
   padding-left: 10px;
-  line-height: 1px;
 `;
 const CheckList = styled.p`
   color: ${colors.black};
   /* justify-content: center; */
   padding-left: 10px;
-  line-height: 1px;
 `;
 const ListSection = styled.div`
   display: flex;
@@ -65,7 +74,7 @@ const ListSection = styled.div`
   align-items: center;
 `;
 const ImagePayment = styled.img`
-
+  max-width: 100%;
 `;
 const MainProduct = () => {
   return (
@@ -96,7 +105,9 @@ const MainProduct = () => {
             </ListSection>
           </IconContext.Provider>
           <Heading>TODAY'S DEAL PRICE : ₹199</Heading>
-          <CommonBtn title="BUY IT TODAY" />
+          <a href="/product/1" style={{ textDecoration: "none" }}>
+            <CommonBtn title="BUY IT TODAY" />
+          </a>
           <ImagePayment src={payment} alt="banner" />
           <IconContext.Provider value={{ color: "#006466" }}>
             <ListSection>
