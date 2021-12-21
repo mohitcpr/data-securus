@@ -7,6 +7,7 @@ const Container = styled.div`
   margin-right: 50px;
   @media only screen and (max-width: 768px) {
     margin-right: 0px;
+    min-width: 100%;
   }
 `;
 const Heading = styled.h2``;
