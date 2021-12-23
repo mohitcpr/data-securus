@@ -105,7 +105,7 @@ const MainProduct = () => {
             </ListSection>
           </IconContext.Provider>
           <Heading>TODAY'S DEAL PRICE : ₹199</Heading>
-          <a href="/product/1" style={{ textDecoration: "none" }}>
+          <a href="/checkout/1" style={{ textDecoration: "none" }}>
             <CommonBtn title="BUY IT TODAY" />
           </a>
           <ImagePayment src={payment} alt="banner" />
