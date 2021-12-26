@@ -76,11 +76,25 @@ const ListSection = styled.div`
 const ImagePayment = styled.img`
   max-width: 100%;
 `;
+const BtnLink = styled.a`
+  text-decoration: none;
+  font-size: 18px;
+  background: #247173;
+  padding: 10px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 10px;
+`;
 const MainProduct = () => {
   return (
     <Container>
       <Main>
-        <Image src={img} alt="banner" />
+        <Image src={"/images/gdb.png"} alt="banner" />
         <TextContent>
           <Heading>All-In-One Mega Graphic Bundle</Heading>
           <ReviewText>
@@ -105,9 +119,17 @@ const MainProduct = () => {
             </ListSection>
           </IconContext.Provider>
           <Heading>TODAY'S DEAL PRICE : ₹199</Heading>
-          <a href="/checkout/1" style={{ textDecoration: "none" }}>
-            <CommonBtn title="BUY IT TODAY" />
-          </a>
+          <div>
+            <BtnLink href="/checkout/1" style={{ textDecoration: "none" }}>
+              Buy it Today
+            </BtnLink>
+            <BtnLink
+              href="#pricing"
+              style={{ textDecoration: "none", background: "#5d345f" }}
+            >
+              More Plans
+            </BtnLink>
+          </div>
           <ImagePayment src={payment} alt="banner" />
           <IconContext.Provider value={{ color: "#006466" }}>
             <ListSection>

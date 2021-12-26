@@ -28,7 +28,7 @@ const Main = styled.div`
   @media only screen and (max-width: 900px) {
     flex-direction: column;
     padding-left: 20px;
-  padding-right: 20px;
+    padding-right: 20px;
   }
 `;
 const SubText = styled.p`
@@ -122,7 +122,7 @@ const GDBundle = () => {
             </ListSection>
           </IconContext.Provider>
         </TextContent>
-        <Image src={img} alt="banner" />
+        <Image src={"/images/gdb.png"} alt="banner" />
       </Main>
     </Container>
   );

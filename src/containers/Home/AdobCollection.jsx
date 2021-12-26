@@ -76,6 +76,20 @@ const ListSection = styled.div`
 const ImagePayment = styled.img`
   max-width: 100%;
 `;
+const BtnLink = styled.a`
+  text-decoration: none;
+  font-size: 18px;
+  background: #247173;
+  padding: 10px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 10px;
+`;
 const AdobCollection = () => {
   return (
     <Container>
@@ -105,9 +119,17 @@ const AdobCollection = () => {
             </ListSection>
           </IconContext.Provider>
           <Heading>TODAY'S DEAL PRICE : ₹249</Heading>
-          <a href="/checkout/2" style={{ textDecoration: "none" }}>
-            <CommonBtn title="BUY IT TODAY" />
-          </a>
+          <div>
+            <BtnLink href="/checkout/2" style={{ textDecoration: "none" }}>
+              Buy it Today
+            </BtnLink>
+            <BtnLink
+              href="#pricing"
+              style={{ textDecoration: "none", background: "#5d345f" }}
+            >
+              More Plans
+            </BtnLink>
+          </div>
           <ImagePayment src={payment} alt="banner" />
           <IconContext.Provider value={{ color: "#006466" }}>
             <ListSection>
