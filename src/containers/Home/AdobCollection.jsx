@@ -118,9 +118,9 @@ const AdobCollection = () => {
               <List>Verified Purchases (113234)</List>
             </ListSection>
           </IconContext.Provider>
-          <Heading>TODAY'S DEAL PRICE : ₹249</Heading>
+          <Heading>TODAY'S DEAL PRICE : 99</Heading>
           <div>
-            <BtnLink href="/checkout/2" style={{ textDecoration: "none" }}>
+            <BtnLink href="/checkout/4" style={{ textDecoration: "none" }}>
               Buy it Today
             </BtnLink>
             <BtnLink

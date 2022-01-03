@@ -34,6 +34,7 @@ const Heading = styled.h1`
   font-family: "Merriweather Sans", Sans-serif;
   font-size: 39px;
   padding-right: 50px;
+  margin: 0;
   @media only screen and (max-width: 900px) {
     padding-right: 0;
     text-align: center;
@@ -55,9 +56,16 @@ const Image = styled.img`
 const Subheading = styled.p`
   color: ${colors.white};
   color: #c4c4c4;
+  margin-top: 0;
 `;
 const Logo = styled.img`
   max-width: 300px;
+`;
+const CouponImg = styled.img`
+  max-height: 180px;
+  @media only screen and (max-width: 900px) {
+    max-width: 100%;
+  }
 `;
 const HomeMain = () => {
   return (
@@ -67,6 +75,7 @@ const HomeMain = () => {
         <TextContent>
           <Logo src="/static/logo-white.png" alt="Data Securus" />
           <Heading>WORLD'S BEST MARKETPLACE BUILDER</Heading>
+          <CouponImg src="/images/offer.png" />
           <Subheading>
             That Gets You More Clients, Higher Amount Projects, Builds Your
             Authority & Kills The Competition…

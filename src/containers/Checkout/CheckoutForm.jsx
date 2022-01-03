@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import CheckoutMain from "./CheckoutMain";
+import Coupon from "./Coupon";
 
 const Container = styled.div`
   min-width: 300px;
@@ -161,6 +162,7 @@ const CheckoutForm = ({ product }) => {
               <PaymentIcon src="/static/payment/ib.png" />
             </PaymentIconContainer>
           </RadioContainer>
+          <Coupon price={product.selling_price} />
           <Submit type="submit" value="Place Order" />
         </Form>
       </Container>

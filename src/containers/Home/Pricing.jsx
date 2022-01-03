@@ -32,6 +32,7 @@ const Main = styled.div`
   margin-left: 180px;
   margin-right: 180px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
   @media only screen and (max-width: 1400px) {
     margin-left: 80px;
     margin-right: 80px;
